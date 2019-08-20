@@ -16,6 +16,8 @@ services:
       - ./volume/redis/conf/redis.conf:/etc/redis/redis.conf:ro
       - ./volume/redis/data:/data:rw
     network_mode: "host"
+    extra_hosts:
+      - "redis.${PRODUCT_NAME}.${COMPANY_NAME}:${HOST_IP}"
     # cap_add:
     #   - NET_ADMIN
     #   - SYS_ADMIN
