@@ -7,7 +7,7 @@ version: "2"
 services:
   # redis
   redis:
-    image: ${IMAGE_REDIS}
+    image: ${IMAGE_REPO}/${IMAGE_REDIS}
     container_name: "redis.${PRODUCT_NAME}.${COMPANY_NAME}"
     hostname: "redis.${PRODUCT_NAME}.${COMPANY_NAME}"
     restart: "always"
