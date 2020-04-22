@@ -7,10 +7,12 @@ version: "2"
 services:
   # redis
   redis:
-    image: ${IMAGE_REPO}/${IMAGE_REDIS}
+    image: "${IMAGE_REDIS}"
     container_name: "redis.${PRODUCT_NAME}.${COMPANY_NAME}"
     hostname: "redis.${PRODUCT_NAME}.${COMPANY_NAME}"
     restart: "always"
+    env_file:
+      - ./redis.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./volume/redis/conf/redis.conf:/etc/redis/redis.conf:ro
